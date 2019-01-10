@@ -8,14 +8,15 @@ using System.Web.Routing;
 
 namespace MvcMusicStore
 {
-    public class MvcApplication : System.Web.HttpApplication
+    public class MvcApplication : HttpApplication
     {
         protected void Application_Start()
         {
+            System.Data.Entity.Database.SetInitializer(
+            new MvcMusicStore.Models.SampleData());
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
     }
 }
