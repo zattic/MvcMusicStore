@@ -9,31 +9,13 @@ namespace MvcMusicStore.Models
 {
     public class Album
     {
-        [ScaffoldColumn(false)]//设定表单编辑时允许隐藏的字段
-        public int AlbumId { get; set; }//自动属性
-
-
-        [DisplayName("链接")]
-        public string AlbumArtUrl { get; set; }
-
-
-        public int ArtistId { get; set; }
-        [Required(ErrorMessage = "必填内容（音乐专辑名）")]//定义必填字段
-
-
+        public int AlbumId { get; set; }
         public int GenreId { get; set; }
-
-
-        [DisplayName("价格")]
-        public decimal Price { get; set; }
-
-
-        [DisplayName("专辑")]
+        public int ArtistId { get; set; }
         public string Title { get; set; }
-
-
-        public virtual Genre Genre { get; set; }
-
-        public virtual Artist Artist { get; set; }
+        public decimal Price { get; set; }
+        public string AlbumArtUrl { get; set; }
+        public Genre Genre { get; set; }
+        public Artist Artist { get; set; }
     }
 }
