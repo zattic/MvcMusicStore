@@ -1,0 +1,51 @@
+1 AppKey：79423fab3c541d1d90d063a9979ace5e
+
+2下载JsonObject.dll,并添加引用
+
+3.读文档，了解程序运行结果和调用过程
+
+4.创建Weather 实体类
+
+5.利用示例代码 天气数据获取工具类
+common/WeatherHelper.cs
+
+GetWeatherByCityName（string city）
+ConverToWeather(JsonObje)
+
+6.在Home控制器中获取数据
+WeatherHelper.GetWeatherByCityName
+将数据送入视图(Weather对象）
+
+7.Index 视图
+设强视图类型（Weather）
+
+
+
+--------------------------------------------
+
+百度地图api
+1. KEY NoO5SQkU1AKe1o9NP0dNfe1VnCyBB2Mw
+
+2. 示例DEMO http://lbsyun.baidu.com/jsdemo.htm#i8_1
+
+3. 分析示例文档，去掉不需要的部分，留下需要的代码，并分析获取结果--城市
+r.address.city
+
+4. AJAX获取城市之后，加载城市天气
+   AJAX设置 
+                    ajax.open("POST", "../home/getWeather", true);
+		    ajax.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		    ajax.send("city=" + r.address.city);
+		    ajax.responseType = "json";
+                    ajax.onload=funciotn(){
+			var json =ajax.respone(天气数据）
+                        JS方式填到页面
+                    }
+                    ajax.send(城市参数)
+
+5.在控制器中写AJAX响应程序
+
+              public JsonResult getweather(string city) {获取数据，转换为JSON，传到调用处｝
+                
+｝         
+
